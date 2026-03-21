@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Register</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<h1>Register</h1>
+<form id="regForm">
+    <label>Username <input name="username" required minlength="3" pattern="^\S+$"></label><br>
+    <label>Email <input name="email" required type="email"></label><br>
+    <label>First name <input name="firstName" required></label><br>
+    <label>Last name <input name="lastName" required></label><br>
+    <label>Phone <input name="phone" pattern="^\+?\d{7,15}$"></label><br>
+    <label>DOB <input name="dob" type="date" required></label><br>
+    <label>Password <input name="password" type="password" required minlength="8"></label><br>
+    <label>Confirm <input name="confirmPassword" type="password" required></label><br>
+    <button type="submit">Register</button>
+</form>
+<div id="errors" style="color:red"></div>
+<div id="success" style="color:green"></div>
+
+<script src = js/register.js></script>
+</body>
+</html>

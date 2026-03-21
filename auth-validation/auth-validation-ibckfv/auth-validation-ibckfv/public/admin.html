@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Admin</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<h1>Admin Area</h1>
+<div id="info"></div>
+<script>
+    async function load() {
+        const token = localStorage.getItem('token');
+        if (!token) { document.getElementById('info').textContent = "Please login"; return; }
+        const res = await fetch('/api/admin/users', { headers: { 'Authorization': 'Bearer ' + token } });
+        if (!res.ok) { document.getElementById('info').textContent = await res.text(); return; }
+        const j = await res.json();
+        document.getElementById('info').textContent = JSON.stringify(j, null, 2);
+    }
+    load();
+</script>
+</body>
+</html>

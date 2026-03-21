@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Пользователи</h1>
+<div id="users"></div>
+
+<script>
+    async function loadUsers() {
+        const res = await fetch('/api/users');
+        const data = await res.json();
+        const div = document.getElementById('users');
+        div.innerHTML = data.map(u => `<p><b>${u.Name}</b> — ${u.Email}</p>`).join('');
+    }
+    loadUsers();
+</script>
+</body>
+</html>

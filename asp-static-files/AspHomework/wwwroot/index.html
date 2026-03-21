@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/images/logo.png" alt="Логотип" class="logo">
+            <h1>Minecraft Инвентарь</h1>
+            <p>Управление предметами</p>
+        </div>
+
+        <div class="nav">
+            <button id="nav-inventory" class="active">Инвентарь</button>
+            <button id="nav-add">Добавить предмет</button>
+        </div>
+
+        <div class="content">
+            <section id="view-inventory-view">
+                <h2>Инвентарь</h2>
+
+                <div class="filters">
+                    <input type="text" id="categoryFilter" placeholder="Фильтр по категории">
+                    <input type="number" id="minCountFilter" placeholder="Мин. количество" min="0">
+                    <button id="applyFilters">Применить фильтры</button>
+                </div>
+
+                <div id="stats" class="stats"></div>
+
+                <div id="loading" class="loading" style="display: none;"></div>
+
+                <div id="emptyInventory" class="empty-inventory" style="display: none;">
+                    <h3>Инвентарь пуст</h3>
+                    <p>Добавьте первый предмет во вкладке «Добавить предмет».</p>
+                </div>
+
+                <div id="inventoryGrid" class="inventory-grid"></div>
+            </section>
+
+            <!-- Добавление предмета -->
+            <section id="add-item-view" style="display: none;">
+                <h2>Добавить предмет</h2>
+
+                <form class="add-form">
+                    <div class="form-group">
+                        <label for="itemName">Название предмета</label>
+                        <input type="text" id="itemName" placeholder="Например, Алмазный меч">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCount">Количество</label>
+                        <input type="number" id="itemCount" value="1" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCategory">Категория</label>
+                        <input type="text" id="itemCategory" placeholder="Например, Оружие">
+                    </div>
+
+                    <button id="submitAddItem" class="submit-btn">Добавить в инвентарь</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
